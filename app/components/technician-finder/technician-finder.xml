@@ -1,0 +1,27 @@
+<GridLayout xmlns="http://schemas.nativescript.org/tns.xsd" rows="auto, auto, *" columns="*" class="p-4">
+    <StackLayout row="0" class="mb-4">
+        <Label text="Find RV Technicians" class="text-2xl font-bold mb-2" />
+        <TextView hint="Describe your RV issue..." text="{{ problemDescription }}" class="p-2 border rounded-lg mb-2" />
+        <Button text="Find Technicians" tap="{{ findTechnicians }}" class="bg-blue-500 text-white p-4 rounded-lg" />
+    </StackLayout>
+
+    <Label row="1" text="{{ loading ? 'Searching for technicians...' : '' }}" class="text-center text-gray-600 my-2" />
+
+    <ListView row="2" items="{{ technicians }}" class="list-group" itemTap="{{ onTechnicianTap }}">
+        <ListView.itemTemplate>
+            <GridLayout columns="auto, *, auto" class="p-4 border-b border-gray-200">
+                <Image col="0" src="{{ imageUrl || 'res://placeholder_avatar' }}" class="w-12 h-12 rounded-full mr-4" />
+                <StackLayout col="1">
+                    <Label text="{{ name }}" class="font-bold text-lg" />
+                    <Label text="{{ specialties.join(', ') }}" class="text-gray-600" textWrap="true" />
+                    <StackLayout orientation="horizontal">
+                        <Label text="{{ rating }}" class="text-yellow-500" />
+                        <Label text="⭐" class="text-yellow-500 ml-1" />
+                    </StackLayout>
+                </StackLayout>
+                <Label col="2" text="{{ availability ? 'Available' : 'Busy' }}" 
+                       class="{{ availability ? 'text-green-500' : 'text-red-500' }}" />
+            </GridLayout>
+        </ListView.itemTemplate>
+    </ListView>
+</GridLayout>

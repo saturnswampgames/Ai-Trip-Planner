@@ -1,0 +1,18 @@
+<StackLayout xmlns="http://schemas.nativescript.org/tns.xsd" class="p-4">
+    <GridLayout rows="auto, *" columns="*">
+        <StackLayout row="0" class="mb-4">
+            <SearchBar hint="Where would you like to go?" submit="{{ onSearch }}" class="mb-2" />
+            <Button text="Plan My Trip" tap="{{ onPlanTrip }}" class="bg-blue-500 text-white p-4 rounded-lg" />
+        </StackLayout>
+        
+        <ListView row="1" items="{{ suggestions }}" class="list-group">
+            <ListView.itemTemplate>
+                <StackLayout class="list-group-item p-2">
+                    <Label text="{{ name }}" class="font-bold" />
+                    <Label text="{{ description }}" textWrap="true" />
+                    <Label text="{{ price }}" class="text-green-600" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</StackLayout>

@@ -1,0 +1,29 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="bg-gray-100">
+    <ActionBar title="AI Trip Planner" class="bg-blue-600 text-white" />
+    
+    <TabView selectedTabTextColor="#3b82f6" androidTabsPosition="bottom">
+        <TabView.items>
+            <TabViewItem title="Plan Trip" iconSource="res://map">
+                <TabViewItem.view>
+                    <trip-planner />
+                </TabViewItem.view>
+            </TabViewItem>
+            
+            <TabViewItem title="Navigation" iconSource="res://navigation">
+                <TabViewItem.view>
+                    <StackLayout class="p-4">
+                        <Label text="Navigation View Coming Soon" class="text-center" />
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+            
+            <TabViewItem title="Find Help" iconSource="res://help">
+                <TabViewItem.view>
+                    <StackLayout class="p-4">
+                        <Label text="Technician Finder Coming Soon" class="text-center" />
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
+</Page>
